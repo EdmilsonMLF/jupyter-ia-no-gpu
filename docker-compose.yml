@@ -1,0 +1,12 @@
+services:
+  jupyter:
+    image: jupyter_ia  # Ou o nome da imagem que você está criando
+    container_name: jupyter_ia_container
+    ports:
+      - "8888:8888"  # Expor a porta para acessar o JupyterLab
+    volumes:
+      - ./notebooks:/home/jovyan/work  # Para persistir seus notebooks locais
+    environment:
+      - JUPYTER_ENABLE_LAB=yes  # Habilitar JupyterLab por padrão
+    restart: unless-stopped
+
