@@ -1,22 +1,20 @@
 
-# Jupyter Notebook com Suporte a GPU
+# Jupyter Notebook sem Suporte a GPU
 
-Este projeto utiliza o Docker para criar um ambiente de Jupyter Notebook com suporte a GPU, incluindo bibliotecas populares para aprendizado de máquina e aprendizado profundo. O ambiente é baseado na imagem oficial do Jupyter Notebook e foi configurado para aproveitar a aceleração de hardware com a GPU.
+Este projeto utiliza o Docker para criar um ambiente de Jupyter Notebook sem suporte a GPU. Ele está configurado para rodar aprendizado de máquina, aprendizado profundo e análise de dados, utilizando a CPU em vez da aceleração de hardware da GPU.
 
 ## Requisitos
 
 - Docker instalado na sua máquina.
-- GPU compatível com CUDA.
-- Driver da NVIDIA e Docker com suporte à GPU (NVIDIA Docker).
   
 ## Estrutura do Projeto
 
-Este repositório contém o Dockerfile e o docker-compose.yml necessários para criar o ambiente e executar o JupyterLab com suporte a GPU.
+Este repositório contém o Dockerfile e o docker-compose.yml necessários para criar o ambiente e executar o JupyterLab com suporte a CPU.
 
 ### Dependências
 
-- **TensorFlow** (versão GPU)
-- **PyTorch** (versão GPU)
+- **TensorFlow** (versão para CPU)
+- **PyTorch** (versão para CPU)
 - Bibliotecas para aprendizado de máquina: **scikit-learn**, **xgboost**, **lightgbm**, **catboost**, etc.
 - Ferramentas de análise de dados e gráficos: **pandas**, **matplotlib**, **seaborn**, **plotly**, etc.
 - Bibliotecas para Web Scraping: **beautifulsoup4**, **scrapy**, **selenium**, etc.
@@ -33,7 +31,7 @@ docker build -t jupyter_ia .
 
 ### 2. **Subir o Container**
 
-Use o Docker Compose para subir o container com GPU habilitado:
+Use o Docker Compose para subir o container:
 
 ```bash
 docker-compose up
@@ -51,8 +49,8 @@ Acesse com o token vazio, configurado no `docker-compose.yml`.
 
 ## Notas
 
-- Certifique-se de que sua máquina tem drivers NVIDIA instalados e configurados corretamente para usar a GPU.
 - O JupyterLab será iniciado automaticamente, e você pode começar a usar as ferramentas de aprendizado de máquina e análise de dados.
+- Como não há suporte para GPU, o TensorFlow e o PyTorch serão executados na CPU, o que pode ser mais lento para modelos grandes.
 
 ## Contribuições
 
